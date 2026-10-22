@@ -1,0 +1,11 @@
+name: Rewrite Dubbing CI
+on:
+  workflow_dispatch:
+  push:
+    branches: [ rewrite-dubbing-v1 ]
+jobs:
+  probe:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: Write-Host 'rewrite-dubbing-v1 CI ready'
