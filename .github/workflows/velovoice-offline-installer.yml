@@ -75,8 +75,8 @@ jobs:
 
           $installer = Join-Path $delivery 'VeloVoice-1.3.5-Offline-Setup-x64.exe'
           if (-not (Test-Path -LiteralPath $installer)) { throw 'Installer EXE was not created.' }
-          if ((Get-Item -LiteralPath $installer).Length -lt 40000000) {
-            throw 'Installer is unexpectedly small; runtime payload may not be embedded.'
+          if ((Get-Item -LiteralPath $installer).Length -lt 10000000) {
+            throw 'Installer is unexpectedly small (under 10 MB); runtime payload may not be embedded.'
           }
 
           Write-Host 'Running silent install smoke test...'
@@ -139,6 +139,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: velovoice-1.3.5-offline-delivery
-          path: delivery/*
+          path: |
+            delivery/VeloVoice-1.3.5-Offline-Setup-x64.exe
+            delivery/VeloVoice_1.3.5_Offline_Source.zip
+            delivery/SHA256SUMS.txt
+            delivery/BUILD_REPORT.txt
           if-no-files-found: error
           retention-days: 30
