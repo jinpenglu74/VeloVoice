@@ -6,6 +6,7 @@
 
 - VeloVoice-1.3.5-Offline.iss：Inno Setup 安装器定义，包含自选安装路径、开始菜单/可选桌面快捷方式和卸载入口。
 - build_offline.ps1：验证官方运行包大小与 SHA-256、解压并构建离线安装器。
+- ChineseSimplified.isl：简体中文安装向导消息文件；来源与归属见 INNO_LANGUAGE_NOTICE.txt。
 - payload/VeloVoice-1.3.5-exe-with-jre.zip：官方 1.3.5 Windows x64 运行包，供离线重新构建使用。
 - upstream-source/VeloVoice-1.3.5-source.zip：官方上游源码归档。
 - LICENSE-GPL-3.0.txt：上游许可证副本。
