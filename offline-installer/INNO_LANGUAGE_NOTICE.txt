@@ -1,0 +1,5 @@
+Simplified Chinese Inno Setup translation file
+
+Source: https://github.com/jrsoftware/issrc/blob/main/Files/Languages/ChineseSimplified.isl
+Source repository: https://github.com/jrsoftware/issrc
+The file retains its upstream attribution and notices. It is included only to localize the installer wizard.
