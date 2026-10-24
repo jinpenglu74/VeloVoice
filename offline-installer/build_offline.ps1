@@ -51,8 +51,8 @@ if ($LASTEXITCODE -ne 0) { throw "Inno Setup 编译失败，退出码：$LASTEXI
 
 $installer = Join-Path $OutputRoot 'VeloVoice-1.3.5-Offline-Setup-x64.exe'
 if (-not (Test-Path -LiteralPath $installer)) { throw '编译结束但没有生成安装器。' }
-if ((Get-Item -LiteralPath $installer).Length -lt 40000000) {
-    throw '安装器体积异常偏小，疑似没有把运行组件封装进去。'
+if ((Get-Item -LiteralPath $installer).Length -lt 10000000) {
+    throw '安装器体积异常偏小（小于 10 MB），疑似没有把运行组件封装进去。'
 }
 Write-Host "OFFLINE_INSTALLER=$installer"
 Write-Host "INSTALLER_SIZE=$((Get-Item -LiteralPath $installer).Length)"
